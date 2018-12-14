@@ -21,7 +21,8 @@ h3 {
 h4 {
   font-weight: 300 !important;
   color: $white;
-  margin-bottom: 1.94rem !important;
+  margin-bottom: 1rem !important;
+  line-height: 40px;
 }
 h5 {
   color: $white;
@@ -54,4 +55,65 @@ h6 {
     font-size: 1rem;
     color: white;
   }
+}
+
+// Buttons
+
+.btn_v1 {
+  background-color: $green;
+  border-radius: 3px;
+  padding: 1.19em 1.88em;
+  font-size: 0.81rem;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: $white;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.btn_v2_gray {
+  background-color: #e1e1e1;
+  border-radius: 5px;
+  padding: 0.5em 1.06em;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: $white;
+  font-weight: 700;
+  margin-bottom: 1.44rem;
+}
+
+.btn_v2_purple {
+  @extend .btn_v2_gray;
+  background-color: $purple;
+}
+
+// Form
+
+.input-group {
+  .input-group-append {
+  }
+  input {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    height: 100%;
+  }
+  .input-group-text {
+    background-color: $green !important;
+    color: $white;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    font-size: 1rem;
+  }
+
+  input,
+  .input-group-text {
+    border: none;
+    padding: 1.31rem 1.56rem;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

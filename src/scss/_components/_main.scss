@@ -1,131 +1,242 @@
 //main: ../style.scss
 
-main {
-  /*----------- Section 1 -----------*/
+/*----------- Section 1 -----------*/
 
-  .section-1 {
-    margin-top: 110px;
-    margin-bottom: 80px;
-  }
+.section-1 {
+  margin-top: 110px;
+  margin-bottom: 80px;
+}
 
-  /*----------- Section Grid -----------*/
+/*----------- Section Grid -----------*/
 
-  .section-grid {
-    .grid {
-      display: grid;
-      grid-template-columns: 1.05fr 1.05fr 1.2fr 0.8fr 0.8fr;
-      // grid-auto-rows: 278px;
+.section-grid {
+  .grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1.05fr 1.2fr 0.8fr 0.8fr;
+    // grid-auto-rows: 278px;
 
-      .item {
-        // border: 1px solid red;
-        padding-top: 50px;
-        padding-left: 38px;
-        padding-bottom: 59px;
+    .item {
+      // border: 1px solid red;
+      padding-top: 50px;
+      padding-left: 38px;
+      padding-bottom: 59px;
 
-        .p_small {
-          color: $white;
-        }
-
-        .wrapper {
-          width: 301px;
-        }
-
-        cursor: pointer;
+      .p_small {
+        color: $white;
       }
 
-      // Background Items
+      .wrapper {
+        width: 301px;
+      }
 
-      .our,
-      .sign,
-      .start {
+      cursor: pointer;
+    }
+
+    // Background Items
+
+    .our,
+    .sign,
+    .start {
+      z-index: 15 !important;
+      .wrapper {
         z-index: 15 !important;
-        .wrapper {
-          z-index: 15 !important;
-        }
-        position: relative;
-        &:before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          z-index: -2;
-          left: 0;
-          background-color: #091e28;
-        }
-        &:after {
-          position: absolute;
-          content: "";
-          width: 100%;
-          height: 100%;
-          top: 0;
-          opacity: 0.7;
-          z-index: -1;
-          left: 0;
-          // background-color: #091e28;
-          background-size: cover;
-          background-position: center center;
-        }
       }
-
-      // Individiual items
-
-      .design {
-        background-color: $red;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: -2;
+        left: 0;
+        background-color: #091e28;
       }
-
-      .built {
-        background-color: $dark-purple;
+      &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        opacity: 0.7;
+        z-index: -1;
+        left: 0;
+        // background-color: #091e28;
+        background-size: cover;
+        background-position: center center;
       }
+    }
 
-      .our {
-        &:after {
-          background-image: url("../../assets/images/our.jpg");
-        }
+    // Individiual items
+
+    .design {
+      background-color: $red;
+    }
+
+    .built {
+      background-color: $dark-purple;
+    }
+
+    .our {
+      &:after {
+        background-image: url("../../assets/images/our.jpg");
       }
+    }
 
-      .how {
-        grid-column: 4/6;
-        background-color: $purple;
+    .how {
+      grid-column: 4/6;
+      background-color: $purple;
+    }
+
+    .perfect {
+      background-color: $green;
+    }
+
+    .sign {
+      grid-column: 1/3;
+      &:after {
+        background-image: url("../../assets/images/sign.jpg");
       }
+    }
 
-      .perfect {
-        background-color: $green;
-      }
-
-      .sign {
-        grid-column: 1/3;
-        &:after {
-          background-image: url("../../assets/images/sign.jpg");
-        }
-      }
-
-      .start {
-        grid-column: span 2;
-        &:after {
-          background-image: url("../../assets/images/start.jpg");
-        }
+    .start {
+      grid-column: span 2;
+      &:after {
+        background-image: url("../../assets/images/start.jpg");
       }
     }
   }
+}
 
-  /*----------- Section 3 -----------*/
+/*----------- Section 3 -----------*/
 
-  .section-3 {
-    position: relative;
-    margin-top: 97px;
-    margin-bottom: 160px;
+.section-3 {
+  position: relative;
+  margin-top: 97px;
+  margin-bottom: 160px;
 
-    h3 {
-      margin-bottom: 65px !important;
-    }
+  h3 {
+    margin-bottom: 65px !important;
+  }
+}
+
+/*----------- Section Car -----------*/
+
+.section-car {
+  // background-image: url("../../assets/images/car.jpg");
+  padding-top: 454px;
+  padding-bottom: 135px;
+  position: relative;
+  z-index: 5;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    background-color: $purple;
   }
 
-  /*----------- Section Car -----------*/
-
-  .section-car {
+  &:after {
+    @extend .section-car:before;
+    background-color: transparent;
+    border: none;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-image: url("../../assets/images/car.jpg");
-    padding-top: 454px;
-    padding-bottom: 135px;
+    opacity: 0.9;
+    z-index: -1;
+  }
+
+  .shadow {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 center;
+
+    background: radial-gradient(
+      circle at left,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0) 39%
+    );
+  }
+}
+
+/*----------- Section Green -----------*/
+
+.section-green {
+  background-color: $green;
+  padding-bottom: 165px;
+  padding-top: 125px;
+  h3 {
+    margin-bottom: 65px !important;
+  }
+
+  h3,
+  h6 {
+    color: $white;
+  }
+}
+
+/*----------- Section Offer -----------*/
+.section-offer {
+  padding-top: 103px;
+  padding-bottom: 145px;
+  background-color: $pale-gray;
+  position: relative;
+
+  p {
+    color: $blue-gray;
+  }
+  .right {
+    background-color: $white;
+    position: relative;
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      box-shadow: -2px 10px 44px 0px rgba(0, 0, 0, 0.1);
+      top: 0;
+    }
+  }
+
+  .wrapper {
+    margin: 47px 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  i {
+    color: #c5c5c5 !important;
+    font-size: 2rem;
+  }
+
+  h4 {
+    margin-bottom: 25px !important;
+  }
+}
+
+/*----------- Footer -----------*/
+
+.section-footer {
+  background-color: #192431;
+  padding-top: 130px;
+  padding-bottom: 157px;
+  color: $pale-gray;
+
+  h6 {
+    color: $pale-gray;
+  }
+  .p_small {
+    margin: 0;
+    color: $pale-gray;
   }
 }
