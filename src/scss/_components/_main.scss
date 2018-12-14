@@ -1,10 +1,14 @@
 //main: ../style.scss
 
 main {
+  /*----------- Section 1 -----------*/
+
   .section-1 {
-    padding-top: 110px;
-    padding-bottom: 80px;
+    margin-top: 110px;
+    margin-bottom: 80px;
   }
+
+  /*----------- Section Grid -----------*/
 
   .section-grid {
     .grid {
@@ -102,6 +106,18 @@ main {
           background-image: url("../../assets/images/start.jpg");
         }
       }
+    }
+  }
+
+  /*----------- Section 3 -----------*/
+
+  .section-3 {
+    position: relative;
+    margin-top: 97px;
+    margin-bottom: 160px;
+
+    h3 {
+      margin-bottom: 65px !important;
     }
   }
 }
