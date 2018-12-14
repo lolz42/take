@@ -1,538 +1,57 @@
 //main: ../style.scss
-/*----------- Headings -----------*/
-body {
-  text-rendering: optimizeLegibility !important;
-}
-
-hr {
-  margin-top: $hr-padding;
-  margin-bottom: $hr-padding;
-  height: 1px;
-  background-color: #eeeeee;
-  width: 85%;
-  border: none;
-  @include media-breakpoint-down(md) {
-    margin-top: 2.4rem;
-    margin-bottom: 2.4rem;
-  }
-}
-
-.vertical-rule {
-  width: 1px;
-  height: 100%;
-  background-color: #eeeeee;
-  margin-left: 2.13rem;
-  margin-right: 2.13rem;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
 
 p {
-  font-size: 0.94rem;
-  font-family: 'Roboto',sans-serif;
-  color: #8e8c8c;
-  margin-bottom: 1.88rem;
+  font-size: 0.19rem !important;
+  font-weight: 400 !important;
+  margin-bottom: 1.56rem !important;
+  line-height: 24px !important;
 }
 
-h5 {
-  font-weight: 500;
-  color: $h5-color;
-  line-height: 1.43;
-}
-
-h6 {
-  text-transform: uppercase;
-  font-weight: 700;
-  color: $h6-color;
-  margin-bottom: 1.5rem;
-}
-
-h4 {
-  @extend h6;
-  color: $h5-color;
+.display-1 {
+  font-weight: 300 !important;
+  color: $white !important;
+  margin-bottom: 1.31rem !important;
 }
 
 h3 {
-  color: #575153 !important;
-  text-transform: uppercase;
-  line-height: 1.11;
+  font-weight: 300 !important;
+  color: $charcoal;
+  margin-bottom: 1.88rem !important;
+}
+h4 {
+  font-weight: 300 !important;
+  color: $dark-gray-blue;
+  color: $white;
+  margin-bottom: 1.94rem !important;
+}
+h5 {
+  color: $white;
+  font-weight: 700 !important;
+}
+h6 {
   font-weight: 600;
-  margin-bottom: 2.5rem !important;
+  color: $slate-gray;
+  margin-bottom: 1.81rem !important;
 }
 
-.display-4 {
-  line-height: 1.1;
-  text-transform: uppercase;
-  color: #575153;
-  letter-spacing: 2.4px;
-  @include media-breakpoint-down(md) {
-    font-size: 2.5rem !important;
-  }
-  @include media-breakpoint-down(sm) {
-    font-size: 2rem !important;
-  }
-}
-// Links
-
-a {
-  &:hover {
-    text-decoration: none;
-  }
-}
-/*----------- Overlay -----------*/
-.overlay {
-  z-index: 100;
-  position: fixed;
-  // background-color: rgba(255,255,255,0.8);
-  background-color: $black;
-  height: 100%;
-  width: 0;
-  transition: $transition-collapse;
-
-  ul {
-    visibility: hidden;
-    opacity: 0;
-    transition: $transition-fade;
-  }
-
-  .nav-item {
-    // background-color: $;
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-
-    a {
-      padding: 1.2rem 0 !important;
-      color: white;
-      height: 100%;
-      width: 100%;
-      text-align: right;
-      padding-right: 4rem !important;
-      @include media-breakpoint-down(md) {
-        padding-right: 2rem !important;
-      }
-    }
-
-    &:hover {
-      background-color: $cyan;
-    }
-  }
-
-  &.open {
-    transition: $transition-collapse !important;
-
-    ul {
-      transition: $transition-fade;
-      transition-delay: 0.2s;
-      opacity: 1;
-      visibility: visible;
-    }
-    width: 30%;
-    @include media-breakpoint-down(sm) {
-      width: 60%;
-    }
-  }
-}
-/*----------- Hamburger -----------*/
-
-.hamburger {
-  // padding-left: $navbar-pad;
-  z-index: 100;
+.p_small {
+  font-size: 0.81rem;
+  line-height: 24px;
 }
 
-.hamburger .line {
-  width: 35px;
-  height: 3px;
-  background-color: white;
-  display: block;
-  margin: 8px auto;
-  // transform:scale(0.5);
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.hamburger:hover {
-  cursor: pointer;
-}
-/* ONE */
-#hamburger-1.is-active .line:nth-child(2) {
-  opacity: 0;
-}
-
-#hamburger-1.is-active .line:nth-child(1) {
-  -webkit-transform: translateY(11px) rotate(45deg);
-  -ms-transform: translateY(11px) rotate(45deg);
-  -o-transform: translateY(11px) rotate(45deg);
-  transform: translateY(11px) rotate(45deg);
-}
-
-#hamburger-1.is-active .line:nth-child(3) {
-  -webkit-transform: translateY(-11px) rotate(-45deg);
-  -ms-transform: translateY(-11px) rotate(-45deg);
-  -o-transform: translateY(-11px) rotate(-45deg);
-  transform: translateY(-11px) rotate(-45deg);
-}
-/*----------- Black navbar -----------*/
-.navbar {
-  // padding-right: 1rem;
-  // padding-left: 1rem;
-  .navbar-collapse {
-    flex-basis: 0;
-  }
-
-  .currency-item {
-    position: relative;
-
-    &:hover {
-      .currency-dropdown {
-        display: flex;
-      }
-    }
-  }
-
-  .currency-dropdown {
-    background-color: $black !important;
-    display: none;
-    position: absolute;
-    width: 100%;
-    padding: 1rem;
-    justify-content: center;
-    align-items: center;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: -20px;
-      // border:1px solid red;
-      width: 100%;
-      height: 20px;
-    }
-
-    .dropdown-item {
-      margin-top: 0;
-      color: $light-gray;
-      font-size: 0.81rem;
-      padding: 0;
-      text-align: center;
-
-      &:hover {
-        background-color: transparent;
-        color: white;
-      }
-    }
-  }
-
-  .nav-link {
-    font-size: 0.81rem;
-    padding: 0.7rem 0;
-    font-weight: 500;
-
-    i {
-      top: 20px;
-    }
-    // &:first-child {
-    //   padding-left: 0;
-    // }
-    &:last-child {
-      padding-right: 0;
-    }
-
-    &:after {
-      display: none;
-    }
-  }
-
-  .shopping-cart {
-    padding: 0 1.4rem;
-    // padding-right: $navbar-pad;
-    i {
-      margin-right: 1rem;
-    }
-  }
-}
-
-.shopping-cart-item {
-  position: relative;
-
-  &:hover {
-    .cart-drop-menu {
-      display: block;
-    }
-  }
-
-  .price-container {
-    display: flex;
-    justify-content: center;
-  }
-
-  .qnt-container {
-    input {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 25px !important;
-      @extend .h4;
-    }
-  }
-}
-/*----------- Centered image -----------*/
 .bgc {
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-/*----------- Cart drop menu -----------*/
 
-.cart-drop-menu {
-  // background-color: transparent;
-  // border:1px solid red;
-  transform-origin: bottom;
-  left: 0;
-  height: 200px;
-  bottom: -200px;
-  display: none;
+.side-logo-container {
   position: absolute;
-  width: 100%;
-  z-index: 30;
-  @include media-breakpoint-down(md) {
-    left: -200%;
-    right: 0;
-  }
-  @include media-breakpoint-down(sm) {
-    // left: 50%;
-    width: 50%;
-    left: -225%;
-  }
-
-  ul {
-    width: 350px;
-    height: auto;
-    padding: 1.4rem;
-    background-color: $cyan;
-
-    hr {
-      margin: 0.7rem 0;
-    }
-  }
-
-  li {
-    display: grid;
-    grid-template-columns: 5fr 1fr 2fr 1fr;
-    grid-auto-rows: auto;
-    justify-content: center;
-    align-items: flex-start;
-    padding-bottom: 0.8rem;
-    z-index: 20;
-
-    &:last-child {
-      padding-bottom: 0 !important;
-    }
-
-    .item {
-      // border:1px solid black;
-      display: flex;
-
-      h4 {
-        color: white;
-        font-size: 0.75rem;
-        margin-bottom: 0;
-      }
-    }
-
-    .times {
-      justify-content: flex-end;
-
-      i {
-        color: white;
-        cursor: pointer;
-
-        &:hover {
-          color: $black;
-        }
-      }
-    }
-
-    .total {
-      grid-column-start: 1;
-      grid-column-end: -1;
-      display: flex;
-      justify-content: space-between;
-
-      h4 {
-        color: white;
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-/*----------- Custom Lists -----------*/
-.custom-list_v1 {
-  li {
-    padding: 0.2rem 0;
-
-    a {
-      color: $h5-color;
-    }
-
-    a:hover {
-      h5 {
-        color: $cyan !important;
-      }
-    }
-  }
-}
-/*----------- Custom Nav -----------*/
-.custom-nav {
-  margin-bottom: $hr-padding;
-
-  .nav-item {
-    padding: 0;
-  }
-
-  .nav-link {
-    padding-left: 0;
-    padding-right: 3rem;
+  transform: rotate(-90deg);
+  .side-logo {
     text-transform: uppercase;
-    font-size: 0.81rem;
-    font-weight: 600;
-    color: $dark-black;
-    display: flex;
-    flex-direction: column;
-
-    &.active,
-    &:hover {
-      i {
-        color: $cyan;
-      }
-    }
-
-    i {
-      position: absolute;
-      margin-top: 0.5rem;
-      margin-left: 0.1rem;
-      color: #989898;
-      top: 25px;
-    }
-
-    &:after {
-      display: none;
-    }
-  }
-}
-/*----------- Black Banner -----------*/
-.black-banner {
-  width: 100% !important;
-  width: 25.44rem;
-  background-color: $black;
-  padding: 3.55rem 3.31rem;
-  @include media-breakpoint-down(md) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  @include media-breakpoint-down(sm) {
-    padding: 1.55rem 1.31rem;
-  }
-
-  .black-banner-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2.25rem;
-    line-height: 48px;
-    @include media-breakpoint-down(md) {
-      text-align: center;
-      font-size: 1.5rem !important;
-
-      i {
-        font-size: 0.7rem !important;
-      }
-    }
-    @include media-breakpoint-down(sm) {
-      i {
-        font-size: 0.5rem !important;
-      }
-    }
-  }
-}
-/*----------- Cyan Banner -----------*/
-.cyan-banner {
-  background-color: $cyan;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .icon-container {
-    i {
-      color: white;
-      font-size: 2.25rem;
-      padding: 0 1.2rem;
-    }
-  }
-}
-/*----------- Custom Container -----------*/
-.custom-container {
-  width: 1170px;
-  margin: 0 auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  @include media-breakpoint-down(lg) {
-    width: 900px;
-  }
-  @include media-breakpoint-down(md) {
-    max-width: 90%;
-  }
-  @include media-breakpoint-down(sm) {
-    max-width: 100%;
-  }
-}
-/*----------- Dropdown -----------*/
-
-.navbar,
-.navbar-lower {
-  .dropdown:hover {
-    .dropdown-menu {
-      // transition: $transition-fade;
-      // display: block;
-      visibility: visible !important;
-      opacity: 1;
-    }
-  }
-
-  .dropdown > .dropdown-toggle:active {
-    /*Without this, clicking will make it sticky*/
-    pointer-events: none !important;
-  }
-}
-/*----------- Buttons -----------*/
-.btn_v1 {
-  background-color: none !important;
-  border-radius: 0 !important;
-  background-color: transparent !important;
-  border: 2px solid #737373 !important;
-  color: #454647 !important;
-  line-height: normal;
-  font-size: 1rem !important;
-  letter-spacing: 3.2px;
-  text-transform: uppercase !important;
-  font-weight: 500 !important;
-  padding: 1.2rem 2.06rem;
-  cursor: pointer;
-  z-index: 20;
-  @include media-breakpoint-down(md) {
-    font-size: 0.8rem !important;
-  }
-  @include media-breakpoint-down(sm) {
-    padding: 1rem !important;
-  };
-
-  &:hover {
-    background-color: $cyan !important;
-    border-color: $cyan !important;
-    color: white !important;
+    font-weight: 300;
+    font-size: 1rem;
+    color: white;
   }
 }

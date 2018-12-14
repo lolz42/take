@@ -14,86 +14,127 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
+
+//Other Colors
 $black: #333333;
 $dark-black: #222222;
 $black: #333333;
 $dark-black: #222222;
 $blue: #007bff !default;
 $indigo: #6610f2 !default;
-$purple: #6f42c1 !default;
+$purple: #bd8cbf !default;
 $pink: #e83e8c !default;
-$red: #dc3545 !default;
+$red: #f5989d !default;
 $orange: #fd7e14 !default;
 $yellow: #ffc107 !default;
-$green: #28a745 !default;
+$green: #82ca9c !default;
 $teal: #20c997 !default;
 $cyan: #00c8c8;
-$light-gray: #999999;
-$h5-color: #727272;
-$h6-color: #575153;
-$body-bg: $white;
-$primary: $blue !default;
-$secondary: $gray-600 !default;
-$success: $green !default;
-$info: $cyan !default;
-$warning: $yellow !default;
-$danger: $red !default;
-$light: $gray-100 !default;
-$dark: #333333; // Spacing
+
+// Custom Colors
+$dark-purple: #615f7d;
+$charcoal: #222626;
+$gray: #959595;
+$slate-gray: #67676d;
+$dark-gray-blue: #2e3b4e;
+$blue-gray: #8297a7;
+$pale-gray: #f6f7fa;
+$slate: #57697f;
+
 //
 // Control the default styling of most Bootstrap elements by modifying these
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 $spacer: 1rem !default;
-$spacers: ()
-!default; // stylelint-disable-next-line scss/dollar-variable-default
-$spacers: map-merge((1: 0.5rem, 2: 1rem, 3: 2rem, 4: 4rem, 5:6.25rem, section-1: 3.25rem, section-2:4.25rem, section-3:5.25rem, section-4:7.75rem), $spacers); // Grid containers
-//
+$spacers: (
+
+) !default; // stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    1: 0.5rem,
+    2: 1rem,
+    3: 2rem,
+    4: 4rem,
+    5: 6.25rem,
+    section-1: 3.25rem,
+    section-2: 4.25rem,
+    section-3: 5.25rem,
+    section-4: 7.75rem
+  ),
+  $spacers
+); // Grid containers
 // Define the maximum width of `.container` for different screen sizes.
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
-)
-!default;
+  xl: 1100px
+) !default;
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1770px
-)
-!default; // This variable affects the `.h-*` and `.w-*` classes.
-$sizes: ()
-!default; // stylelint-disable-next-line scss/dollar-variable-default
-$sizes: map-merge((25: 25%, 50: 50%, 75: 75%, 100: 100%, auto: auto), $sizes); // Options
-//
-// Quickly modify global styling by enabling or disabling optional features.
-$enable-caret: true; // Fonts
-//
-$font-family-base: 'Montserrat', sans-serif; // $h1-font-size:                $font-size-base * 2.5 !default;
-// $h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size: 1.13rem;
-$h4-font-size: 0.81rem;
+  xl: 1169px
+) !default;
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge(
+  (
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    auto: auto
+  ),
+  $sizes
+);
+// Links
+// Style anchor elements.
+$link-color: $white;
+$link-decoration: none;
+$link-hover-color: $purple;
+$link-hover-decoration: none;
+// Options
+$font-family-base: "Open Sans", sans-serif;
+// $h1-font-size: $font-size-base * 2.5 !default;
+// $h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: 2.19rem;
+$h4-font-size: 1.88rem;
 $h5-font-size: 0.88rem;
-$h6-font-size: 0.75rem; // Links
+$h6-font-size: 0.81rem;
+// Display Headings
+$display1-size: 3.75rem;
+$display2-size: 5.5rem !default;
+$display3-size: 4.5rem !default;
+$display4-size: 3rem;
+// Links
 $link-decoration: none; // hr
 // Navbar
-$navbar-padding-y: 0; // $navbar-padding-x:                  19.5rem;
+$navbar-padding-y: 0;
+// $navbar-padding-x:                  19.5rem;
 $navbar-padding-x: 0;
 $navbar-nav-link-padding-x: 1.2rem;
-$navbar-dark-color: $light-gray;
+// $navbar-dark-color: $light-gray;
 $navbar-dark-hover-color: white;
 $navbar-dark-active-color: $white !default;
 $navbar-dark-disabled-color: $white;
-$navbar-light-color: $dark-black;
+// $navbar-light-color: $dark-black;
 $navbar-light-hover-color: $cyan;
-$navbar-light-active-color: $cyan; // Dropdowns
-//
+$navbar-light-active-color: $cyan;
+// Dropdowns
 // Dropdown menu container and contents.
 $dropdown-min-width: 10rem;
 $dropdown-padding-y: 0.5rem; // Transitions
 $transition-base: all 0.2s ease-in-out !default;
 $transition-fade: opacity 0.15s linear !default;
 $transition-collapse: all 0.4s cubic-bezier(0.4, 0, 0, 1);
+// Text
+$small-font-size: 0.75rem;
+$text-muted: $slate;
+// Jumbotron
+$jumbotron-padding: 2rem !default;
+$jumbotron-bg: tranparent;
+// Body
+$body-color: $gray;
