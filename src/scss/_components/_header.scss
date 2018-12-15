@@ -1,22 +1,63 @@
 //main: ../style.scss
 
-.test {
-  color: red !important;
-}
-
 header {
   height: 100vh;
   background-image: url("../../assets/images/cover.jpg");
   position: relative;
+
+  @include media-breakpoint-down(md) {
+    background-position: 48% center !important;
+  }
+
+  .side-logo-container {
+    bottom: 50px;
+
+    @include media-breakpoint-down(lg) {
+      bottom: 169px;
+    }
+
+    @include media-breakpoint-down(md) {
+      left: -40px;
+    }
+  }
   .logo {
     position: absolute;
     top: 56px;
     // margin-left: 0.94rem;
+    @include media-breakpoint-down(md) {
+      width: 90px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 70px;
+      top: 20px;
+    }
   }
+  .jumbo {
+    position: relative;
+  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
   .iphone {
     position: absolute;
-    top: 240px;
-    right: 317px;
+    right: 17%;
+    top: 24%;
+
+    @include media-breakpoint-down(lg) {
+      width: 40%;
+      top: 56%;
+      right: 8%;
+    }
+
+    @include media-breakpoint-down(md) {
+      top: 74%;
+      right: 3%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
   }
 }

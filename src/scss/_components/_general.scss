@@ -5,39 +5,95 @@ p {
   font-weight: 400 !important;
   margin-bottom: 1.56rem !important;
   line-height: 24px !important;
+
+  @include media-breakpoint-down(md) {
+    font-size: 0.95rem !important;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 0.84rem !important;
+  }
 }
 
 .display-1 {
   font-weight: 300 !important;
   color: $white !important;
   margin-bottom: 1.31rem !important;
+
+  @include media-breakpoint-down(md) {
+    font-size: 4rem !important;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 3rem !important;
+  }
 }
 
 h3 {
   font-weight: 300 !important;
   color: $charcoal;
   margin-bottom: 1.88rem !important;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2.6rem !important;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 2rem !important;
+  }
 }
 h4 {
   font-weight: 300 !important;
   color: $white;
   margin-bottom: 1rem !important;
   line-height: 40px;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2rem !important;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 1.6rem !important;
+  }
 }
 h5 {
   color: $white;
   font-weight: 700 !important;
+
+  @include media-breakpoint-down(md) {
+    font-size: 0.95rem !important;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 0.8rem !important;
+  }
 }
 h6 {
   font-weight: 600;
   color: $slate-gray;
-  margin-bottom: 1.81rem !important;
+  margin-bottom: 1.4rem !important;
+
+  @include media-breakpoint-down(md) {
+    font-size: 1rem !important;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 0.8rem !important;
+  }
 }
 
 .p_small {
   font-size: 0.81rem;
   line-height: 24px;
   margin-bottom: 2.5rem;
+
+  @include media-breakpoint-down(md) {
+    font-size: 0.85rem;
+    line-height: 29px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 0.81rem;
+  }
 }
 
 .bgc {
@@ -49,11 +105,39 @@ h6 {
 .side-logo-container {
   position: absolute;
   transform: rotate(-90deg);
+  .bolded {
+    font-weight: 600 !important;
+  }
   .side-logo {
     text-transform: uppercase;
     font-weight: 300;
     font-size: 1rem;
     color: white;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 0.8rem;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    left: -30px !important;
+  }
+
+  @include media-breakpoint-down(md) {
+    left: -10px !important;
+    display: none;
+  }
+}
+
+// Side logo for other sections
+
+.section-3,
+.section-green,
+.section-offer {
+  position: relative;
+
+  .side-logo-container {
+    top: 180px;
   }
 }
 
@@ -69,6 +153,11 @@ h6 {
   color: $white;
   font-weight: 700;
   margin-bottom: 1.25rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $purple !important;
+  }
 }
 
 .btn_v2_gray {
@@ -108,7 +197,7 @@ h6 {
   input,
   .input-group-text {
     border: none;
-    padding: 1.31rem 1.56rem;
+    padding: 1.1rem 1.2rem;
   }
 }
 
@@ -116,4 +205,41 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+/*----------- Arrow right -----------*/
+
+.arrow-right {
+  position: absolute;
+  top: -1px;
+  left: 114%;
+  height: 20px;
+  width: 90px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    margin-top: -2.7px;
+    margin-left: -1px;
+    width: 6px;
+    height: 6px;
+    border-bottom: 1px solid $white;
+    border-right: 1px solid $white;
+    transform: rotate(-45deg);
+    transition: 160ms ease-out 80ms;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    width: 20px;
+    height: 1px;
+    background-color: $white;
+    transition: 160ms ease-out 80ms;
+  }
+}
+
+.arrow-container {
+  position: relative;
 }
