@@ -1,5 +1,51 @@
 //main: ../style.scss
 
+/*----------- Loading -----------*/
+
+.loading-overlay {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  background-color: black;
+  z-index: 100;
+  visibility: visible;
+
+  .side-logo {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 1.2 !important;
+    color: white;
+  }
+
+  .ring-1 {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 7px dashed #4f99c0;
+    border-radius: 100%;
+  }
+
+  .load-4 .ring-1 {
+    animation: loadingD 1.5s 0.3s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+  }
+}
+
+@keyframes loadingD {
+  0 {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /*----------- Section 1 -----------*/
 
 .section-1 {
@@ -112,11 +158,13 @@
         background-repeat: no-repeat;
       }
 
-      &:hover {
-        &:after {
-          opacity: 0.4 !important;
-        }
-      }
+      // Hover effect
+
+      // &:hover {
+      //   &:after {
+      //     opacity: 0.4 !important;
+      //   }
+      // }
     }
 
     // Individiual items
@@ -181,11 +229,11 @@
     margin-bottom: 80px;
   }
   .side-logo {
-    color: #b8b8b8;
+    color: #b8b8b8 !important;
   }
 
   .side-logo-container {
-    bottom: 0;
+    top: 45px !important;
   }
   h3 {
     margin-bottom: 65px !important;
@@ -327,8 +375,12 @@
     padding-bottom: 80px;
   }
 
+  .side-logo-container {
+    top: 134px !important;
+  }
+
   .side-logo {
-    color: #b8b8b8;
+    color: #b8b8b8 !important;
   }
 
   p {
@@ -361,7 +413,7 @@
 
   i {
     color: #c5c5c5 !important;
-    font-size: 2rem;
+    font-size: 1.7rem;
 
     &:hover {
       transition: $transition-fade !important;
@@ -382,6 +434,9 @@
   padding-top: 130px;
   padding-bottom: 157px;
   color: $pale-gray;
+
+  input {
+  }
 
   @include media-breakpoint-down(md) {
     padding-top: 100px;
