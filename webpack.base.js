@@ -95,7 +95,7 @@ module.exports = {
             }
           }
           // {
-          //   loader: 'image-webpack-loader',
+          //   loader: "image-webpack-loader",
           //   options: {
           //     mozjpeg: {
           //       progressive: true,
@@ -103,18 +103,17 @@ module.exports = {
           //     },
           //     // optipng.enabled: false will disable optipng
           //     optipng: {
-          //       enabled: true,
+          //       enabled: true
           //     },
           //     pngquant: {
-          //       quality: '91',
+          //       quality: "91",
           //       speed: 4
           //     },
           //     gifsicle: {
-          //       interlaced: false,
-          //     },
-          //
+          //       interlaced: false
+          //     }
           //   }
-          //   },
+          // }
         ]
       }
     ]
