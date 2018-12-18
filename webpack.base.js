@@ -27,10 +27,10 @@ module.exports = {
     filename: "js/[name].[hash].js",
     path: path.resolve(__dirname, "dist"),
 
-    // publicPath: "dist/"
+    publicPath: "dist/"
 
     // nOTE: DEVELOPMENT
-    publicPath: "/"
+    // publicPath: "/"
   },
   module: {
     rules: [
@@ -137,33 +137,33 @@ module.exports = {
     }),
     new webpack.HashedModuleIdsPlugin(),
 
-    // new HtmlCriticalWebpackPlugin({
-    //   base: path.resolve(__dirname, "dist"),
-    //   src: "../index.html",
-    //   dest: "../index.html",
-    //   inline: true,
-    //   minify: false,
-    //   extract: false,
-    //   width: 375,
-    //   height: 565,
-    //   penthouse: {
-    //     blockJSRequests: false
-    //   }
-    // }),
+    new HtmlCriticalWebpackPlugin({
+      base: path.resolve(__dirname, "dist"),
+      src: "../index.html",
+      dest: "../index.html",
+      inline: true,
+      minify: false,
+      extract: false,
+      width: 375,
+      height: 565,
+      penthouse: {
+        blockJSRequests: false
+      }
+    }),
 
     new HtmlWebpackPlugin({
       template: "src/index.html",
-      // filename: "../index.html",
+      filename: "../index.html",
       // nOTE: DEVELOPMENT
 
-      filename: "index.html",
+      // filename: "index.html",
       minify: {
-        // collapseWhitespace: true,
-        // removeComments: true,
-        // removeRedundantAttributes: true,
-        // removeScriptTypeAttributes: true,
-        // removeStyleLinkTypeAttributes: true,
-        // useShortDoctype: true
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
       }
     }),
 

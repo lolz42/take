@@ -47,12 +47,18 @@ $(document).ready(function() {
     0.05
   );
   tl.add("stagger", "+=0.3");
-  tl.fromTo(iphone, 1, {autoAlpha: 0}, {autoAlpha: 1}, "stagger");
+  tl.fromTo(
+    iphone,
+    1,
+    {autoAlpha: 0, ease: Power4.ease},
+    {autoAlpha: 1, ease: Power3.ease},
+    "stagger"
+  );
   tl.fromTo(
     headerSibling[0],
     0.4,
-    {autoAlpha: 0, ease: Power3.ease},
-    {autoAlpha: 1},
+    {autoAlpha: 0, ease: Power4.ease},
+    {autoAlpha: 1, ease: Power3.ease},
     "stagger"
   );
 
@@ -71,11 +77,12 @@ $(document).ready(function() {
 
     new ScrollMagic.Scene({
       triggerElement: this,
-      triggerHook: 0.8
+      triggerHook: 0.8,
+      reverse: false
       // duration: "100%"
     })
       .setTween(tlSec)
-      .addIndicators()
+
       .addTo(controller);
   });
 
@@ -93,11 +100,12 @@ $(document).ready(function() {
 
   new ScrollMagic.Scene({
     triggerElement: $(".section-offer")[0],
-    triggerHook: 0.6
+    triggerHook: 0.6,
+    reverse: false
     // duration: "100%"
   })
     .setTween(tlThird)
-    .addIndicators({name: "section-offer"})
+
     .addTo(controller);
 
   // Grid animation
@@ -106,18 +114,20 @@ $(document).ready(function() {
 
   tlFourth.staggerFromTo(
     gridItem,
-    0.8,
-    {autoAlpha: 0, scale: 0.9},
-    {autoAlpha: 1, scale: 1}
+    1.5,
+    {autoAlpha: 0, ease: Power3.ease},
+    {autoAlpha: 1, ease: Power3.ease},
+    0.16
   );
 
   new ScrollMagic.Scene({
     triggerElement: $(".section-grid")[0],
     triggerHook: 0.8
-    // duration: "70%"
+    // reverse: false
+    // duration: "100%"
   })
     .setTween(tlFourth)
-    .addIndicators({name: "section-grid"})
+
     .addTo(controller);
 
   // Section Car animation
@@ -149,9 +159,10 @@ $(document).ready(function() {
 
   new ScrollMagic.Scene({
     triggerElement: $(".section-car")[0],
-    triggerHook: 1
+    triggerHook: 1,
+    reverse: false
   })
     .setTween(tlFifth)
-    .addIndicators({name: "section-car", colorTrigger: "orange"})
+
     .addTo(controller);
 });
