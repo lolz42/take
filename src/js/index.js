@@ -22,4 +22,6 @@ import "../scss/style.scss";
 
 import "./custom.js";
 
+/*----------- Loading images -----------*/
+
 require.context("./../", true, /\.(png|jpe?g|gif|svg)$/);

@@ -1,14 +1,14 @@
 {
-  "main.css": "dist/css/0.8a1371e3583668a761c5.css",
-  "main.js": "dist/js/main.6b053b04e1368f3aedb5.js",
-  "runtime.js": "dist/js/runtime.6b053b04e1368f3aedb5.js",
-  "vendors.js": "dist/js/vendors.6b053b04e1368f3aedb5.js",
+  "main.css": "dist/css/0.56a224e87732c28aca20.css",
+  "main.js": "dist/js/main.7040eea75be6f96b635e.js",
+  "runtime.js": "dist/js/runtime.7040eea75be6f96b635e.js",
+  "vendors.js": "dist/js/vendors.7040eea75be6f96b635e.js",
   "../index.html": "dist/../index.html",
-  "images/style.scss": "dist/images/sign-7cde72aee01c28730cab336eafaf29f3.jpg",
-  "images/cover.jpg": "dist/images/cover-aeceec00ac423de749d106630a7fb20d.jpg",
+  "images/style.scss": "dist/images/sign-465109626444785e3f2bb7e3adfaa51c.jpg",
+  "images/cover.jpg": "dist/images/cover-2887ee634537f6809f93d642b8badfa4.jpg",
   "images/i-phone.png": "dist/images/i-phone-cad38c2808d1c4623e04cc1e6e2a3e16.png",
-  "images/image.jpg": "dist/images/image-aeceec00ac423de749d106630a7fb20d.jpg",
+  "images/image.jpg": "dist/images/image-2887ee634537f6809f93d642b8badfa4.jpg",
   "images/layer-4.png": "dist/images/layer-4-0250d8b333a31bf4b30bca17205066c7.png",
-  "images/logo.png": "dist/images/logo-9d1f2768b535ea313b4cd84d875a203b.png",
-  "images/start.jpg": "dist/images/start-4d89fa44e91757a41111fe64ed765633.jpg"
+  "images/logo.png": "dist/images/logo-2e91111c58056789eb2fb7be60e585a2.png",
+  "images/start.jpg": "dist/images/start-726f5968742a9627e33589cc0c50e641.jpg"
 }

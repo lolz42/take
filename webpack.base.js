@@ -99,14 +99,14 @@ module.exports = {
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 95
+                quality: 90
               },
               // optipng.enabled: false will disable optipng
               optipng: {
                 enabled: false
               },
               pngquant: {
-                quality: "80-90",
+                quality: "75-90",
                 speed: 4
               },
               gifsicle: {
@@ -114,7 +114,7 @@ module.exports = {
               }
               // the webp option will enable WEBP
               // webp: {
-              //   quality: 75
+              //   quality: 85
               // }
             }
           }
