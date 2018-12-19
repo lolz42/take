@@ -1,35 +1,33 @@
-const path = require('path');
+const path = require("path");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
-const merge = require('webpack-merge');
-const base = require('./webpack.base.js');
+const merge = require("webpack-merge");
+const base = require("./webpack.base.js");
 
 module.exports = merge(base, {
-  mode: 'production',
+  mode: "production",
   // devtool: 'source-map',
 
   optimization: {
-
     minimizer: [
-          new UglifyJsPlugin({
+      new UglifyJsPlugin({
         cache: true,
         parallel: true,
         sourceMap: true
       }),
-          new OptimizeCSSAssetsPlugin({})
-        ],
+      new OptimizeCSSAssetsPlugin({})
+    ],
 
-    runtimeChunk: 'single',
+    runtimeChunk: "single",
     splitChunks: {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all'
+          name: "vendors",
+          chunks: "all"
         }
       }
     }
-  },
-
+  }
 });

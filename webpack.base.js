@@ -93,27 +93,31 @@ module.exports = {
             options: {
               name: "images/[name]-[hash].[ext]"
             }
+          },
+          {
+            loader: "image-webpack-loader",
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 95
+              },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: false
+              },
+              pngquant: {
+                quality: "80-90",
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false
+              }
+              // the webp option will enable WEBP
+              // webp: {
+              //   quality: 75
+              // }
+            }
           }
-          // {
-          //   loader: "image-webpack-loader",
-          //   options: {
-          //     mozjpeg: {
-          //       progressive: true,
-          //       quality: 91
-          //     },
-          //     // optipng.enabled: false will disable optipng
-          //     optipng: {
-          //       enabled: true
-          //     },
-          //     pngquant: {
-          //       quality: "91",
-          //       speed: 4
-          //     },
-          //     gifsicle: {
-          //       interlaced: false
-          //     }
-          //   }
-          // }
         ]
       }
     ]
@@ -165,22 +169,6 @@ module.exports = {
         useShortDoctype: true
       }
     }),
-
-    //   new HtmlWebpackPlugin({
-    //   template: 'src/sing_up.html',
-    //   // filename: '../index.html',
-    //   // nOTE: DEVELOPMENT
-    //
-    //   filename: 'sing_up.html',
-    //   minify: {
-    //     // collapseWhitespace: true,
-    //     // removeComments: true,
-    //     // removeRedundantAttributes: true,
-    //     // removeScriptTypeAttributes: true,
-    //     // removeStyleLinkTypeAttributes: true,
-    //     // useShortDoctype: true
-    //   }
-    // }),
 
     new ManifestPlugin({}),
 
