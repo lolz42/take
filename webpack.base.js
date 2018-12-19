@@ -27,10 +27,10 @@ module.exports = {
     filename: "js/[name].[hash].js",
     path: path.resolve(__dirname, "dist"),
 
-    // publicPath: "dist/"
+    publicPath: "dist/"
 
     // nOTE: DEVELOPMENT
-    publicPath: "/"
+    // publicPath: "/"
   },
   module: {
     rules: [
@@ -156,10 +156,10 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: "src/index.html",
-      // filename: "../index.html",
+      filename: "../index.html",
       // nOTE: DEVELOPMENT
 
-      filename: "index.html",
+      // filename: "index.html",
       minify: {
         collapseWhitespace: true,
         removeComments: true,
