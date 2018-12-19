@@ -25,3 +25,7 @@ import "./custom.js";
 /*----------- Loading images -----------*/
 
 require.context("./../", true, /\.(png|jpe?g|gif|svg)$/);
+
+const io = new IntersectionObserver(entries => {
+  console.log(entries);
+}, {});
